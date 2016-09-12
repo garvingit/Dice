@@ -1,4 +1,4 @@
-Die Di = new Die(50, 150);
+Die Di;
 void setup()
 {
 	
@@ -10,6 +10,7 @@ void setup()
 void draw()
 {
 	//code here
+	Di = new Die(50, 150);
 	Di.roll();
 	Di.show();
 
@@ -32,19 +33,19 @@ class Die //models one single dice cube
 	void roll()
 	{
 		// how it rolls
-		value = (int)(Math.random())+6;
+		value = (int)(Math.random())+1;
 	}
 	void show()
 	{
 		//your code here
 		noStroke();
 		fill(255);
-		rect(myX, myY, 100, 100, 10);
+		rect(myX, myY, 100*3/4, 100*3/4, 20);
 		fill(0);
 		// what happens if the dice value is 1,2,3,4,5,6
 		if (value == 1)
 		{
-			ellipse(myX+50, myY+50, 20, 20);
+			ellipse(myX+50*3/4, myY+50*3/4, 20*3/4, 20*3/4);
 		}
 		else if (value == 2)
 		{
@@ -77,7 +78,8 @@ class Die //models one single dice cube
 		{
 			for(int y = 20; y <= 80; y+=30)
 			{
-				ellipse(myX+25, myY+y, 20, 20);
+				for(int x = 25; x<=75; x+=50)
+				ellipse(myX+x, myY+y, 20, 20);
 			}
 		}
 	}
