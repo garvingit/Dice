@@ -1,4 +1,5 @@
 Die Di;
+float mNum = 0.75 ;
 void setup()
 {
 	
@@ -10,10 +11,16 @@ void setup()
 void draw()
 {
 	//code here
-	Di = new Die(50, 150);
-	Di.roll();
-	Di.show();
-
+	for(int  y= 20; y<= 375; y+= 95)
+	{
+		for(int x = 20; x < 390; x+=95)
+		{		
+			Di = new Die(x, y);
+			Di.roll();
+			Di.show();
+		}
+	}
+	
 }
 void mousePressed()
 {
@@ -23,6 +30,7 @@ class Die //models one single dice cube
 {
 	int value;
 	int myX,myY;
+
 	//variable declarations here
 	Die(int x, int y) //constructor
 	{
@@ -33,53 +41,68 @@ class Die //models one single dice cube
 	void roll()
 	{
 		// how it rolls
-		value = (int)(Math.random())+1;
+		value = (int)(Math.random()*6)+1;
 	}
 	void show()
 	{
 		//your code here
 		noStroke();
-		fill(255);
-		rect(myX, myY, 100*3/4, 100*3/4, 20);
-		fill(0);
 		// what happens if the dice value is 1,2,3,4,5,6
 		if (value == 1)
 		{
-			ellipse(myX+50*3/4, myY+50*3/4, 20*3/4, 20*3/4);
+			fill(255);
+			rect(myX, myY, 100*mNum, 100*mNum, 20);
+			fill(0);
+			ellipse(myX+50*mNum, myY+50*mNum, 20*mNum, 20*mNum);
 		}
 		else if (value == 2)
 		{
-			ellipse(myX+25, myY+25, 20, 20);
-			ellipse(myX+75, myY+75, 20, 20);
+			fill(255);
+			rect(myX, myY, 100*mNum, 100*mNum, 20);
+			fill(0);
+			ellipse(myX+25*mNum, myY+25*mNum, 20*mNum, 20*mNum);
+			ellipse(myX+75*mNum, myY+75*mNum, 20*mNum, 20*mNum);
 		}
 		else if (value == 3)
 		{
-			ellipse(myX+25, myY+25, 20, 20);
-			ellipse(myX+50, myY+50, 20, 20);
-			ellipse(myX+75, myY+75, 20, 20);
+			fill(255);
+			rect(myX, myY, 100*mNum, 100*mNum, 20);
+			fill(0);
+			ellipse(myX+25*mNum, myY+25*mNum, 20*mNum, 20*mNum);
+			ellipse(myX+50*mNum, myY+50*mNum, 20*mNum, 20*mNum);
+			ellipse(myX+75*mNum, myY+75*mNum, 20*mNum, 20*mNum);
 		}
 		else if (value == 4)
 		{
-			ellipse(myX+25, myY+25, 20, 20);
-			ellipse(myX+75, myY+25, 20, 20);
-			ellipse(myX+75, myY+75, 20, 20);
-			ellipse(myX+25, myY+75, 20, 20);
+			fill(255);
+			rect(myX, myY, 100*mNum, 100*mNum, 20);
+			fill(0);
+			ellipse(myX+25*mNum, myY+25*mNum, 20*mNum, 20*mNum);
+			ellipse(myX+75*mNum, myY+25*mNum, 20*mNum, 20*mNum);
+			ellipse(myX+75*mNum, myY+75*mNum, 20*mNum, 20*mNum);
+			ellipse(myX+25*mNum, myY+75*mNum, 20*mNum, 20*mNum);
 			
 		}
 		else if (value == 5)
 		{
-			ellipse(myX+25, myY+25, 20, 20);
-			ellipse(myX+75, myY+25, 20, 20);
-			ellipse(myX+75, myY+75, 20, 20);
-			ellipse(myX+25, myY+75, 20, 20);
-			ellipse(myX+50, myY+50, 20, 20);
+			fill(255);
+			rect(myX, myY, 100*mNum, 100*mNum, 20);
+			fill(0);
+			ellipse(myX+25*mNum, myY+25*mNum, 20*mNum, 20*mNum);
+			ellipse(myX+75*mNum, myY+25*mNum, 20*mNum, 20*mNum);
+			ellipse(myX+75*mNum, myY+75*mNum, 20*mNum, 20*mNum);
+			ellipse(myX+25*mNum, myY+75*mNum, 20*mNum, 20*mNum);
+			ellipse(myX+50*mNum, myY+50*mNum, 20*mNum, 20*mNum);
 		}
 		else if (value == 6)
 		{
+			fill(255);
+			rect(myX, myY, 100*mNum, 100*mNum, 20);
+			fill(0);
 			for(int y = 20; y <= 80; y+=30)
 			{
 				for(int x = 25; x<=75; x+=50)
-				ellipse(myX+x, myY+y, 20, 20);
+				ellipse(myX+x*mNum, myY+y*mNum, 20*mNum, 20*mNum);
 			}
 		}
 	}
