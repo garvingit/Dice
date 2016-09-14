@@ -1,4 +1,5 @@
 Die Di;
+int sum;
 float mNum = 0.75 ;
 void setup()
 {
@@ -10,6 +11,7 @@ void setup()
 }
 void draw()
 {
+	background(0);
 	//code here
 	for(int  y= 20; y<= 375; y+= 95)
 	{
@@ -18,13 +20,18 @@ void draw()
 			Di = new Die(x, y);
 			Di.roll();
 			Di.show();
+			sum += Di.value;
 		}
 	}
+	
+	text(""+sum, 100,100);
+	
 	
 }
 void mousePressed()
 {
 	redraw();
+	sum = 0;
 }
 class Die //models one single dice cube
 {
