@@ -1,4 +1,5 @@
 Die Di;
+Die Do;
 int sum;
 float mNum = 0.75 ;
 void setup()
@@ -13,6 +14,7 @@ void draw()
 {
 	background(0);
 	//code here
+
 	for(int  y= 20; y<= 375; y+= 95)
 	{
 		for(int x = 20; x < 390; x+=95)
@@ -20,11 +22,12 @@ void draw()
 			Di = new Die(x, y);
 			Di.roll();
 			Di.show();
-			sum += Di.value;
+			sum += Di.value ;
 		}
 	}
-	
-	text(""+sum, 100,100);
+
+	fill(255);
+	text(" "+sum, 200,200);
 	
 	
 }
