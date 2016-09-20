@@ -1,5 +1,4 @@
 Die Di;
-Die Do;
 int sum;
 float mNum = 0.75 ;
 void setup()
@@ -27,14 +26,13 @@ void draw()
 	}
 
 	fill(255);
-	text(" "+sum, 200,200);
+	text("TOTAL: "+sum, 200,205);
 	
 	
 }
 void mousePressed()
 {
 	redraw();
-	sum = 0;
 }
 class Die //models one single dice cube
 {
